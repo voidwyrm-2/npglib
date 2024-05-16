@@ -175,6 +175,10 @@ func (spr *Sprite) SetPixel(x, y int, color color.RGBA) bool {
 	return false
 }
 
+func (spr Sprite) GetSpriteLiteral() [][]color.RGBA {
+	return spr.pixels
+}
+
 // A 3D slice of color.RGBA, meant to be used as a container for a collection of colors in a 3D space, such as a voxel model
 type VoxelSprite struct {
 	Size   [3]int

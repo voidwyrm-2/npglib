@@ -6,7 +6,7 @@ import (
 )
 
 // Function to read the content of a file
-func readFile(fileName string) (string, error) {
+func ReadFile(fileName string) (string, error) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		return "", err
@@ -24,7 +24,7 @@ func readFile(fileName string) (string, error) {
 	return content, nil
 }
 
-func writeFile(filename string, data string) error {
+func WriteFile(filename string, data string) error {
 	// Open the file with write permissions, create it if it doesn't exist
 	file, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0644)
 	if err != nil {
@@ -41,7 +41,7 @@ func writeFile(filename string, data string) error {
 	return nil
 }
 
-func clamp(number, min, max int) int {
+func Clamp[N Number](number, min, max N) N {
 	if number < min {
 		return min
 	} else if number > max {
